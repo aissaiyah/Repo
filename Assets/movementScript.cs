@@ -6,7 +6,8 @@ public class movementScript : MonoBehaviour
 {
     public bool canMove;
     public BoxCollider2D bc;
-    public int[] movement = new int[2];
+    private int[] movement = new int[2];
+    private bool move;
 
 
 
@@ -14,32 +15,35 @@ public class movementScript : MonoBehaviour
     void Start()
     {
         bc = this.GetComponent<BoxCollider2D>();
-        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement = new int[] {0,0};
+        move = false;
 
         if (Input.GetKeyDown(KeyCode.D))
         {
+            move = true;
             movement = new int[] { 1, 0 };
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
+            move = true;
             movement = new int[] { -1, 0 };
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
+            move = true;
             movement = new int[] { 0, 1 };
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
+            move = true;
             movement = new int[] { 0, -1 };
         }
 
-        if (canMove) transform.Translate(movement[0], movement[1], 0);
+        if(move) transform.Translate(movement[0], movement[1], 0);
 
     }
 
@@ -47,16 +51,8 @@ public class movementScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "wall")
         {
-            canMove = false;
-            Debug.Log("Hello");
-        }
-    }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "wall")
-        {
-            canMove = true;
-            Debug.Log("Hello");
+            transform.Translate(-1*movement[0], -1*movement[1], 0);
+            print(movement[0]+" " + movement[1]);
         }
     }
 }
