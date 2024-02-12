@@ -6,7 +6,6 @@ public class laserScript : MonoBehaviour
 {
     public LayerMask hitRead;
     public Vector3 dir;
-    public GameObject wall;
     public float angle;
     // Start is called before the first frame update
     void Start()
