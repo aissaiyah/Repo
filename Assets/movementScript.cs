@@ -6,7 +6,8 @@ public class movementScript : MonoBehaviour
 {
     public bool canMove;
     public BoxCollider2D bc;
-   
+    public int[] movement = new int[2];
+
 
 
     // Start is called before the first frame update
@@ -19,34 +20,29 @@ public class movementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movement = new int[] {0,0};
 
-        if(canMove == true)
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            if (Input.GetKeyDown(KeyCode.D))
-            {
- 
-                transform.Translate(1, 0, 0);
-
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-        
-                transform.Translate(-1, 0, 0);
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-           
-                transform.Translate(0, 1, 0);
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-              
-                transform.Translate(0, -1, 0);
-            }
+            movement = new int[] { 1, 0 };
         }
-  
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            movement = new int[] { -1, 0 };
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            movement = new int[] { 0, 1 };
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            movement = new int[] { 0, -1 };
+        }
+
+        if (canMove) transform.Translate(movement[0], movement[1], 0);
 
     }
+
     void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "wall")
