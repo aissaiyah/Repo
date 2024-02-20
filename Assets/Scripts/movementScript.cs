@@ -18,8 +18,8 @@ public class movementScript : MonoBehaviour
 
         if (collision != null)
         {
-            if (collision.gameObject.tag == "wall" || collision.gameObject.tag == "player") transform.Translate(-1 * direction[0], -1 * direction[1], 0);
-            else if (collision.gameObject.tag == "box")
+            if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Player") transform.Translate(-1 * direction[0], -1 * direction[1], 0);
+            else if (collision.gameObject.tag == "Box")
             {
                 collision.gameObject.transform.Translate(new Vector2(direction[0], direction[1]));
                 if (Physics2D.OverlapCircle(collision.gameObject.transform.position, .2f) != null)
