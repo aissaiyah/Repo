@@ -19,14 +19,14 @@ public class movementScript : MonoBehaviour
 
         if (collision != null)
         {
-            if (collision.gameObject.tag == "wall" || collision.gameObject.tag == "player") transform.Translate(-1 * direction[0], -1 * direction[1], 0);
+            if (collision.gameObject.tag == "wall" || collision.gameObject.tag == "player" || collision.gameObject.tag == "laser") transform.Translate(-1 * direction[0], -1 * direction[1], 0);
             else if (collision.gameObject.tag == "box")
             {
                 collision.gameObject.transform.Translate(new Vector2(direction[0], direction[1]));
                 Collider2D collision2 = Physics2D.OverlapCircle(collision.gameObject.transform.position, .2f);
                 if (collision2!= null)
                 {
-                    if (collision2.gameObject.tag == "wall" || collision2.gameObject.tag == "player" || collision2.gameObject.tag == "box")
+                    if (collision2.gameObject.tag == "wall" || collision2.gameObject.tag == "player" || collision2.gameObject.tag == "box" || collision2.gameObject.tag == "laser")
                     {
                         transform.Translate(-1 * direction[0], -1 * direction[1], 0);
                         collision.gameObject.transform.Translate(new Vector2(-1 * direction[0], -1 * direction[1]));

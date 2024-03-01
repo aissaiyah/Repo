@@ -20,15 +20,19 @@ public class laserScript : MonoBehaviour
         Vector2 dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
 
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 15f, hitRead);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 100f, hitRead);
         transform.localScale = new Vector3(hit.distance, transform.localScale.y, 1);
         
         if (hit.collider == null)
         {
            
-            transform.localScale = new Vector3(15f, transform.localScale.y, 1);
+            transform.localScale = new Vector3(100f, transform.localScale.y, 1);
             return;
 
+        }
+        if(hit.collider.gameObject.tag == "laser")
+        {
+            Debug.Log("lvl complete!");
         }
 
     }

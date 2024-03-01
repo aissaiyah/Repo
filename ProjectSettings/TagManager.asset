@@ -9,6 +9,8 @@ TagManager:
   - RightWall
   - UpWall
   - DownWall
+  - box
+  - laser
   layers:
   - Default
   - TransparentFX
