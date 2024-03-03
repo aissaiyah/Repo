@@ -11,6 +11,8 @@ TagManager:
   - DownWall
   - box
   - laser
+  - Box
+  - eggBox
   layers:
   - Default
   - TransparentFX
