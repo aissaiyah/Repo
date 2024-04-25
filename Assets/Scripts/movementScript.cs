@@ -23,7 +23,7 @@ public class movementScript : MonoBehaviour
             for (int i = 0; i < collisionList.Length; i++)
             {
                 if (collisionList[i].gameObject.tag == "solid" || collisionList[i].gameObject.tag == "player") transform.Translate(-1 * direction[0], -1 * direction[1], 0);//if you collide with a wall or other player you move back to where you where
-                else if (collisionList[i].gameObject.tag == "laserBeam") SceneManager.LoadScene(SceneManager.GetActiveScene().name);//if you hit a laser you die and the level restarts
+                else if (collisionList[i].gameObject.tag == "laser") SceneManager.LoadScene(SceneManager.GetActiveScene().name);//if you hit a laser you die and the level restarts
                 else if (collisionList[i].gameObject.tag == "box")//if its a box then you can push it
                 {
                     collisionList[i].gameObject.transform.Translate(new Vector2(direction[0], direction[1]));//move box
