@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 192545213}
   m_Layer: 0
   m_Name: Laser
-  m_TagString: Untagged
+  m_TagString: solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2809,7 +2809,7 @@ GameObject:
   - component: {fileID: 667272660}
   m_Layer: 0
   m_Name: Laser 2
-  m_TagString: Untagged
+  m_TagString: solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
