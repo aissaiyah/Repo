@@ -4,15 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall
-  - LeftWall
-  - RightWall
-  - UpWall
-  - DownWall
   - box
-  - laser
-  - Box
-  - eggBox
+  - laserBeam
+  - solid
   layers:
   - Default
   - TransparentFX
