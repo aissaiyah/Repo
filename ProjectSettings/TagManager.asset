@@ -7,6 +7,10 @@ TagManager:
   - box
   - laserBeam
   - solid
+  - eggBox
+  - wall
+  - laser
+  - soild
   layers:
   - Default
   - TransparentFX
